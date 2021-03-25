@@ -28,7 +28,7 @@ source seata.sql
 ```
 ### 切换Seata注册中心为Nacos，初始化Seata配置到Nacos
 ```bash
-./nacos-config.sh
+sh nacos-config.sh -h 182.92.219.202 -p 8848 -g SEATA_GROUP -u nacos -w nacos
 ```
 ### 创建并初始化业务数据库
 ```bash
