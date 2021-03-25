@@ -1,4 +1,7 @@
 ### seata整合教程参考： [https://blog.csdn.net/jixieguang/article/details/110621561](https://blog.csdn.net/jixieguang/article/details/110621561)
+ [https://blog.csdn.net/qq_42905196/article/details/106662952](https://blog.csdn.net/qq_42905196/article/details/106662952)
+
+
 # seata-demo使用教程
 
 ## 介绍
