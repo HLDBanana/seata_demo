@@ -9,7 +9,7 @@ Seata1.4.0分布式事务示例，整合Spring Boot 、Spring Cloud、Spring Clo
 
 ### 安装[Nacos](https://nacos.io/zh-cn/)
 ### 安装[Seata](https://seata.io/zh-cn/)
-### git clone [https://gitee.com/xiaowangye/seata-demo.git](https://gitee.com/xiaowangye/seata-demo.git)
+### git clone [https://github.com/HLDBanana/seata_demo](https://github.com/HLDBanana/seata_demo)
 
 ## 使用说明
 
