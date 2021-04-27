@@ -1,4 +1,7 @@
 ### seata整合教程参考： [https://blog.csdn.net/jixieguang/article/details/110621561](https://blog.csdn.net/jixieguang/article/details/110621561)
+ [https://blog.csdn.net/qq_42905196/article/details/106662952](https://blog.csdn.net/qq_42905196/article/details/106662952)
+
+
 # seata-demo使用教程
 
 ## 介绍
@@ -25,7 +28,10 @@ source seata.sql
 ```
 ### 切换Seata注册中心为Nacos，初始化Seata配置到Nacos
 ```bash
-./nacos-config.sh
+# -t 命名空间id
+# -g 分组
+# -h nacos服务地址
+sh nacos-config.sh -h 182.92.219.202 -p 8848 -g SEATA_GROUP -u nacos -w nacos -t  51915a62-d2d6-43d4-8f45-86b159eb90f5
 ```
 ### 创建并初始化业务数据库
 ```bash
