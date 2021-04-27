@@ -15,12 +15,13 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public int decrease(Long userId, BigDecimal money) {
-//        try {
-//            // 模拟超时异常
-//            TimeUnit.SECONDS.sleep(20);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            // 模拟超时异常
+            TimeUnit.SECONDS.sleep(30000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        //int a = 1/0;
         return accountDao.decrease(userId, money);
     }
 

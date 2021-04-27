@@ -15,9 +15,7 @@ spring:
     url: jdbc:mysql://182.92.219.202:3306/seata_storage?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: root
     password: 15090667928Hh_
-feign:
-  hystrix:
-    enabled: true
+
 logging:
   level:
     io:
@@ -34,3 +32,42 @@ seata:
       username: ${spring.cloud.nacos.discovery.username}
       password: ${spring.cloud.nacos.discovery.password}
       group: ${spring.cloud.nacos.discovery.group}
+#      namespace: 51915a62-d2d6-43d4-8f45-86b159eb90f5
+  config:
+    type: nacos
+    nacos:
+      server-addr: ${spring.cloud.nacos.discovery.server-addr}
+      username: ${spring.cloud.nacos.discovery.username}
+      password: ${spring.cloud.nacos.discovery.password}
+      group: ${spring.cloud.nacos.discovery.group}
+      namespace: 51915a62-d2d6-43d4-8f45-86b159eb90f5
+  service:
+    vgroup-mapping:
+      my_test_tx_group: default
+
+feign:
+  httpclient:
+    connection-timeout: 20000
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 20000
+        readTimeout: 20000
+
+#ribbon:
+#  ConnectTimeout: 100000
+#  ReadTimeout: 100000
+#  MaxAutoRetries: 0
+#  OkToRetryOnAllOperations: false
+#  ServerListRefreshInterval: 6000
+#  MaxAutoRetriesNextServer: 3
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000

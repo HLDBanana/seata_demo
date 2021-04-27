@@ -32,10 +32,18 @@ public class OrderServiceImpl implements OrderService {
         //2 扣减库存
         log.info("------------->订单微服务开始调用库存,做扣减Count");
         CommonResult st = storageService.decrease(order.getProductId(), order.getCount());
+        log.info("------------->" + st.toString());
+        if (st.getCode() != 200){
+            throw new  RuntimeException("扣减库存失败");
+        }
         log.info("------------->订单微服务开始调用库存,做扣减end");
         //3 扣减账户
         log.info("------------->订单微服务开始调用账户,做扣减Money");
         CommonResult ac = accountService.decrease(order.getUserId(), order.getMoney());
+        if (ac.getCode() != 200){
+            throw new  RuntimeException("扣减账户失败");
+        }
+        log.info("------------->" + ac.toString());
         log.info("------------->订单微服务开始调用账户,做扣减end");
 
         //4 修改订单状态
